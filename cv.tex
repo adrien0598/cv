@@ -1,0 +1,226 @@
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+%\documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{cv}
+
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+\usepackage{paracol}
+
+
+\ifxetexorluatex
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% ----- LIGHT MODE -----
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{PrimaryColor}{HTML}{001F5A}
+\definecolor{SecondaryColor}{HTML}{0039AC}
+\definecolor{ThirdColor}{HTML}{F3890B}
+\definecolor{BackgroundColor}{HTML}{E2E2E2}
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\pagecolor{BackgroundColor}   
+% ----- DARK MODE -----
+%\definecolor{BackgroundColor}{HTML}{242424}
+%\definecolor{SlateGrey}{HTML}{6F6F6F}
+%\definecolor{LightGrey}{HTML}{ABABAB}
+%\definecolor{PrimaryColor}{HTML}{3F7FFF}
+%\colorlet{name}{PrimaryColor}
+%\colorlet{tagline}{PrimaryColor}
+%\colorlet{heading}{PrimaryColor}
+%\colorlet{headingrule}{PrimaryColor}
+%\colorlet{subheading}{PrimaryColor}
+%\colorlet{accent}{PrimaryColor}
+%\colorlet{emphasis}{LightGrey}
+%\colorlet{body}{LightGrey}
+%\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\usepackage[french]{babel}
+
+\begin{document}
+    \name{Adrien Thomas}
+    \tagline{Élève ingénieur AgroParisTech}
+    \photoL{4cm}{photo}
+    
+    \personalinfo{
+        \email{adrien.thomas@agroparistech.fr}\smallskip
+        \phone{+33 6 52 31 99 75}
+        \location{Paris, France}\\
+        %\github{id}\\
+        %\homepage{nicolasomar.me}
+        %\medium{nicolasomar}
+        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+        
+        \printinfo{\faAddressCard}{Né le 21 Mai 1998 à Lyon}[]
+        % ex autre champ
+        % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+        % \gitlab{your_id}
+    }
+    
+    \makecvheader
+    
+    %ratio gauche droite
+    \columnratio{0.3}
+
+    \begin{paracol}{2}
+        
+        % ----- COMPETENCES -----
+        \cvsection{Compétences}
+            \cvtag{PSC1}
+            \cvtag{Permis B}
+            \cvtag{BAFA}
+            
+            \cvtag{Certification Voltaire}
+            \medskip
+            
+            \cvtag{Pack Office}
+            \cvtag{Python}
+            
+            \cvtag{R}
+            \cvtag{SQL}
+            \cvtag{Premiere Pro}
+            
+            \cvtag{Photoshop}
+            \cvtag{LaTeX}
+            \cvtag{Linux}
+        % ----- COMPETENCES -----
+        
+        % ----- LANGUES -----
+        \cvsection{Langues}
+            \cvlang{Français}{Natif}
+            \divider
+            \cvlang{Anglais}{B2}
+            \divider
+            \cvlang{Chinois}{Bases}
+            
+            
+        % ----- LANGUES -----
+        
+        % ----- LOISIRS -----
+        \cvsection{Loisirs}
+            \cvtag{VTT (FFCT)}
+            \cvtag{Trail}
+            \cvtag{Escalade}
+            
+            \cvtag{Plongée}
+            \cvtag{Escrime}
+            \medskip
+            
+            \cvtag{Scoutisme (depuis 2007)}
+            
+            \cvtag{Animateur jeunesse}
+            
+            \cvtag{Informatique}
+        % ----- LOISIRS -----    
+        
+        % ----- PROJETS -----
+        \cvsection{Projets divers}
+        
+            \cvevent{IGEM }{| MIT \cvrepo{| \faGlobe}{https://igem.org/Main_Page}}{Octobre 2020- Septembre 2021}{}
+            \begin{itemize}
+                \item Compétition universitaire de biologie de synthèse
+                \item Vice-président de l'équipe d'Evry
+            \end{itemize}
+            \bigbreak
+            \cvevent{Projet Solidaire en Bulgarie}{| SGDF \cvrepo{| \faGlobe}{https://www.sgdf.fr/}}{été 2016}{}
+            \begin{itemize}
+                \item Collecte et gestion d'un budget de 10 000€ 
+                \item Gestion de la logistique et de l'intendance sur place pour une équipe de 6 personnes
+            \end{itemize}
+        % ----- PROJETS -----
+        
+        \newpage
+        
+        %On passe à droite
+        \switchcolumn
+        
+        % ----- OBJET (ou description) -----
+        \cvsection{Objet}
+            \begin{quote}
+                Candidature ...
+            \end{quote}
+        % ----- OBJET (ou description) -----
+        
+        % ----- EXPERIENCE -----
+        \cvsection{Experience}
+            %\cvevent{Employé}{| Salaison Torrilhon}{3 moi, Juin 2020 - Aout %2020}{Cheyrac, Haute Loire, France}
+            %\begin{itemize}
+            %    \item Manipulation et vaccination des porcelets
+            %    \item Entretient des zones d'engraissement (paillées)
+            %    \item Préparation des commandes et Vente au client
+            %\end{itemize}
+            %\divider
+            
+            \cvevent{Stage}{| UMR MIA Paris}{30 jours sur l'année 2020-2021}{Paris, France}
+            Comparaison des méthodes d'analyse de données compositionnelles et des approches basées sur des modèles linéaires généralisés pour l'analyse de données métagénomiques
+            \smallbreak
+            \begin{itemize}
+                \item Recherches bibliographiques, état de l'art
+                \item Etude de simulations pour comparer les différentes approches
+                \item Application(s) en métagénomique 
+            \end{itemize}
+             \divider
+            \cvevent{Stage}{| Institut Terres Inovia}{17 jours sur l'année 2019-2020}{Grignon, France}
+            Projet de recherche sur la lutte contre les ravageurs multirésistants du colza
+            \smallbreak
+            \begin{itemize}
+                \item Réorganisation de la base de données
+                \item Automatisation de la saisie des valeurs expérimentales
+                \item Exploitation des résultats (R)
+            \end{itemize}
+            
+            \divider
+            
+            \cvevent{Stage}{| UGSF - UMR 8576 CNRS - Université de Lille}{1 semaine, Février 2016}{Lille, France}
+            Mécanismes moléculaires de la N-glycosylation et pathologies associées.
+            \smallbreak
+            \begin{itemize}
+                \item Utilisation du modèle levure comme miroir des mécanismes molèculaires humains
+                \item Manipulations : transformation et clonage de levures
+            \end{itemize}
+        % ----- EXPERIENCE -----
+        
+        % ----- FORMATION -----
+        \cvsection{Formation}
+            \cvevent{Ecole d'ingénieur}{| AgroParisTech}{2019-2021}{Paris-Grignon, France}
+            \begin{itemize}
+                \item 2\ieme{} année : Santé et nutrition
+                \item 1\ier{} année : Générale
+            \end{itemize}
+            \divider
+            
+            \cvevent{Classe préparatoire BCPST}{| Assomption Bellevue}{2016-2019}{Lyon, France}
+            \divider
+            
+            \cvevent{Baccalauréat S mention Bien}{| Lycée Aux Lazaristes}{2016}{Lyon, France}
+        % ----- FORMATION -----
+        
+    \end{paracol}
+\end{document}
